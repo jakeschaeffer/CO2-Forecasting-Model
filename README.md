@@ -17,7 +17,7 @@ Long-term trend: quadratic, c0+c1(t)+cs2(t^2)
 Seasonal variation (every 365¼ days): cosine, c2(2 pi t / 365.25+c3)
 Noise: Gaussian with 0 mean and fixed standard deviation, c4^2
 The ci variables are all unobserved parameters of the model.
-Combining these three components gives the following likelihood function
+Combining these three components gives the following likelihood function:
 
 ![equation](http://latex.codecogs.com/gif.latex?p%28x_%7Bt%7D%7C%5Ctheta%29%20%3D%20N%28c_%7B0%7D%20&plus;%20c_%7B1%7Dt%20&plus;%20cs_%7B2%7D%28t%5E2%29%20&plus;%20c_%7B2%7Dcos%282%5Cpi%20t/365.25%20&plus;%20c_%7B3%7D%29%2Cc_%7B4%7D%5E2%29)
 
