@@ -27,7 +27,7 @@ sCO2 <- rescale(df$co2)
 gendates <- seq(21791,36391,7)
 sgendates <- seq(1,1.685508,length.out = 2086)
 
-# I tried running the model with and without scaled data (Hint: it did better # with scaled data)
+# I tried running the model with and without scaled data (It did better with scaled data)
 data <- list(N = length(df$day_int),ppm = df$co2,t = df$day_int,
              N_future = length(gendates),t_future = gendates)
 
@@ -104,8 +104,9 @@ fit <- stan(
 skrrrahh("gucci")
 
 print(fit, probs=c(.05, 0.95))
+# Output
 ######################################
-# 		             5%	  95% n_eff Rhat
+# 		       5%	95% n_eff Rhat
 # c0             0.01  0.02   526 1.01
 # c1             0.48  0.48   532 1.00
 # c2             0.03  0.03  2000 1.00
@@ -127,6 +128,7 @@ intervalsdf <- data.frame(intervals)
 
 # Prediction of CO2 level 40 years from now
 ppmpred <- unscaleppm(results[,2086])
+# Output
 # Intervals |      2.5%      50%    97.5%
 # ppm lvls  |  516.6028 518.6575 520.6636
 
